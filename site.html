@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기말고사 사이트</title>
+    <style>
+    .slider{
+        width: 640px;
+        height: 480px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .slider input[type=radio]{
+        display: none;
+    }
+    ul.imgs{
+        padding: 0;
+        margin: 0;
+    }
+    ul.imgs li{
+        position: absolute;
+        left: 640px;
+        transition-delay: 1s;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .bullets{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        z-index: 2;
+    }
+    .bullets label{
+        display: inline-block;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.55);
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+        background-color: aqua;
+    }
+    .slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+        background-color: aqua;
+    }
+    .slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+        background-color: aqua;
+    }
+    .slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+        background-color: aqua;
+    }
+    .slider input[type=radio]:nth-child(5):checked~.bullets>label:nth-child(5){
+        background-color: aqua;
+    }
+    .slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+        left: 0;
+        transition: 0.5s;
+        z-index:1;
+    }
+    .slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+        left: 0;
+        transition: 0.5s;
+        z-index:1;
+    }
+    .slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+        left: 0;
+        transition: 0.5s;
+        z-index:1;
+    }
+    .slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+        left: 0;
+        transition: 0.5s;
+        z-index:1;
+    }
+    .slider input[type=radio]:nth-child(5):checked~ul.imgs>li:nth-child(5){
+        left: 0;
+        transition: 0.5s;
+        z-index:1;
+    }
+    @font-face {
+        font-family: 'ghanachoco';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'HSSummer';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSSummer.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @keyframes textColorAnimation{
+        0%{
+            color: blueviolet;
+        }
+        30%{
+            color: aqua;
+        }
+        60%{
+            color: rgba(red, 0, 0, 0.5);
+        }
+        100%{
+            color: orange;
+        }
+    }
+        #page{
+            width: 1200px;
+            margin: auto;
+            border: 0px solid;
+            background: #dfe9f3;
+            background: -webkit-linear-gradient(left top,#dfe9f3,white);
+            background: -moz-linear-gradient(right bottom,#dfe9f3,white);
+            background: -o-linear-gradient(right bottom,#dfe9f3,white);
+            background: linear-gradient(to right bottom,#dfe9f3,white);
+        }
+        #title1{
+            color: black;
+            text-align: center;
+            font-family: 'ghanachoco';
+            animation-name: textColorAnimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        #title2{
+            color: black;
+            text-align: center;
+            font-family: 'HSSummer';
+        }
+        #login{
+            float: right;
+            text-decoration: none;
+            padding-top: 10px;
+            margin: 10px 20px;
+        }
+        .login1{
+            color: black;
+            text-decoration: none;
+        }
+        #icon{
+            float: right;
+            margin-left: 5px;
+        }
+        #lside{
+            width: 15%;
+            height: 30%;
+            float: left;
+            margin: 1px;
+            padding: 1px;
+            border: 2px solid black;    
+        }
+        #lside ul a{
+            text-decoration: none;
+        }
+        @font-face {
+            font-family: 'HealthsetBambooStd';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetBambooStd.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+}
+        nav li{
+            list-style-type: none;
+            font-weight: bold;
+            font-family: 'HealthsetBambooStd';
+        }
+        nav li:hover{
+            font-size: 40px;
+        }
+        #song{
+            position: absolute;
+            top: 190px;
+            right: 180px;
+        }
+        #table1{
+            height: 400px;
+            border: 2px solid black;
+            border-collapse: collapse;
+            position: absolute;
+            top: 650px;
+            right: 160px;
+        }
+        #table1 td{
+            border: 1px dashed black;
+            padding: 10px;
+            text-align: center;
+        }
+        #table1 td a{
+            text-decoration: none;
+        }
+        #inquary{
+            position: absolute;
+            top: 540px;
+            right: 400px;
+        }
+        #iframe{
+            margin-bottom: 30px;
+
+        }
+        #bottom{
+            color: white;
+            border: 35px solid black;
+            background-color: black;
+            padding-bottom: 30px;
+        }
+        #clnum{
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        #computor{
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body id="page">
+    <header>
+        <h1 id="title1">마술은 예술이다</h1>
+        <h2 id="title2">{ 당신... 마술을 믿습니까? }</h2>   
+        <div id="login">
+            <img id="icon" src="./img/magicion.png" width="50" height="50">           
+            <a href="./login.html" class="login1" target="_blank">로그인</a>
+            <a> | </a>
+            <a href="./joinmember.html" class="login1" target="_blank">회원가입</a>            
+        </div>
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </header>
+    <nav>
+        <div id="lside">
+            <ul>
+                <a href="./coinmagic.html"><li>동전 마술</li></a><br>
+                <li><br></li>
+                <a href="./cardmagic.html"><li>카드 마술</li></a><br>
+                <li><br></li>
+                <a href="./props.html"><li>소품 마술</li></a><br>
+                <li><br></li>
+                <li>
+                <a href="https://search.naver.com/search.naver?query=%EB%A7%88%EC%88%A0%EA%B3%B5%EC%97%B0&i
+                e=utf8&sm=whl_nht" target="_blank">마술 공연<br></a>
+                </li>
+                <li><br></li>
+                <li></li>
+                <a href="https://www.lnmagic.co.kr/?NaPm=ct%3Dl42
+                tu5dr%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk
+                %3D40f776ac0e7d30efae155e891d4a18a1f5a5359a" target="_blank"><li>구매 추천 사이트</li><br></a>                
+                <li><br></li>
+                <li>마술 공유</li><br>
+            </td>
+        </div>
+    </nav>
+    <section>
+        <div class="slider">
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            <input type="radio" name="slide" id="slide4">
+            <input type="radio" name="slide" id="slide5">
+            <ul id="imgholder" class="imgs">
+                <li><img src="./img/believe.jpg" width="600" height="400"></li>
+                <li><img src="./img/coin.jfif" width="600" height="400"></li>
+                <li><img src="./img/card.jfif" width="600" height="400"></li>
+                <li><img src="./img/props.jpg" width="600" height="400"></li>
+                <li><img src="./img/magic1.jpg" width="600" height="400"></li>
+            </ul>
+            <div class="bullets">
+                <label for="slide1">&nbsp;</label>
+                <label for="slide2">&nbsp;</label>
+                <label for="slide3">&nbsp;</label>
+                <label for="slide4">&nbsp;</label>
+                <label for="slide5">&nbsp;</label>
+            </div>
+        </div>
+        <table id="table1">
+                <caption>
+                    <p>[방문시 주의해주세요!!!]</p>
+                <caption>
+                <tr>
+                    <td><a href="./list.html">공지사항</a></td>
+                    <td>앞으로 업데이트 될 내용들</td>
+                </tr>
+                <tr>
+                    <td><a href="./list.html">업데이트</a></td>
+                    <td>추가된 내용들 입니다.</td>
+                </tr>
+                <tr>
+                    <td><a href="./list.html">이용 안내</a></td>
+                    <td>저희 사이트는 이런 사이트입니다.</td>
+                </tr>
+                <tr>
+                    <td><a href="./list.html">제제 대상</a></td>
+                    <td>이럴 경우 강퇴됩니다.</td>
+                </tr>
+                <tr>
+                    <td><a href="./list.html">문의사항</a></td>
+                    <td>이쪽으로 문의해주세요.</td>
+                </tr>
+                <tr>
+                    <td><a href="./list.html">건의사항</a></td>
+                    <td>의견이 있으시면 들어오시기 바랍니다.</td>
+                </tr>
+        </table>
+        <div id="iframe">
+            <iframe src="menu.html" name="left" width="350" height="400" frameborder="1"></iframe>
+            <iframe src="target2.html" name="right" width="450" height="400" frameborder="1"></iframe>
+        </div>      
+    </section>
+    <aside>
+        <div id="song">
+            <table border="0">
+                <br>
+                <br>
+                <tr>
+                    <th>오늘의 노래</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./img/songimg.jpg" width="300" height="300">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <audio src="./song/SG WANNA BE-lalala.mp3" controls></audio>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </aside>
+    <footer id="bottom">
+        <div id="clnum">
+            만든이 : 김성민 | 학번 : 20221017
+        </div>
+        <div id="computor">
+            학과 : 컴퓨터소프트웨어공학과
+        </div>
+    </footer>
+</body>
+</html>
